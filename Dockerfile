@@ -1,10 +1,5 @@
-# Start from scratch
 FROM alpine:latest
 
-ARG ARCH
+COPY go-helloworld-http /go-helloworld-http
 
-# Copy the pre-built binary for the specific architecture
-COPY dist/helloworld-linux-${ARCH} /helloworld
-
-# Set the entrypoint
-ENTRYPOINT ["/hellworld"]
+ENTRYPOINT ["/go-helloworld-http"]
